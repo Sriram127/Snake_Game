@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="game-panel" aria-label="Snake game">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Arcade</p>
+          <h1>Snake Game</h1>
+        </div>
+        <div class="actions">
+          <button id="pauseBtn" class="icon-btn" type="button" aria-label="Pause game" title="Pause">II</button>
+          <button id="restartBtn" class="icon-btn" type="button" aria-label="Restart game" title="Restart">&#8635;</button>
+        </div>
+      </header>
+
+      <div class="stats" aria-label="Game stats">
+        <div class="stat">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <span>Best</span>
+          <strong id="bestScore">0</strong>
+        </div>
+        <div class="stat">
+          <span>Speed</span>
+          <strong id="speedLabel">Normal</strong>
+        </div>
+        <div class="stat">
+          <span>Level</span>
+          <strong id="level">1</strong>
+        </div>
+      </div>
+
+      <div class="board-wrap">
+        <canvas id="gameCanvas" width="480" height="480" aria-label="Snake board"></canvas>
+        <div id="overlay" class="overlay">
+          <h2>Ready?</h2>
+          <p>Choose a speed and press start.</p>
+          <button id="startBtn" class="primary-btn" type="button">Start Game</button>
+        </div>
+      </div>
+
+      <div class="controls-row" aria-label="Difficulty">
+        <button class="mode" type="button" data-speed="easy">Easy</button>
+        <button class="mode active" type="button" data-speed="normal">Normal</button>
+        <button class="mode" type="button" data-speed="hard">Hard</button>
+      </div>
+
+      <div class="toggles" aria-label="Game options">
+        <label>
+          <input id="wrapToggle" type="checkbox">
+          <span>Wrap walls</span>
+        </label>
+        <label>
+          <input id="soundToggle" type="checkbox" checked>
+          <span>Sound</span>
+        </label>
+      </div>
+
+      <div class="mobile-pad" aria-label="Touch controls">
+        <span></span>
+        <button type="button" data-dir="up" aria-label="Move up">&#9650;</button>
+        <span></span>
+        <button type="button" data-dir="left" aria-label="Move left">&#9664;</button>
+        <button type="button" data-dir="down" aria-label="Move down">&#9660;</button>
+        <button type="button" data-dir="right" aria-label="Move right">&#9654;</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
